@@ -28,10 +28,11 @@ void insertion_sort_list(listint_t **list)
 			{
 				temp = item->prev;
 				temp->next = item->next;
-				temp->prev = item;
 
 				item->next = temp;
 				item->prev = temp->prev;
+
+				temp->prev = item;
 
 				print_list((const listint_t *)current_list);
 			}
